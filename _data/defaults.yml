@@ -1,4 +1,4 @@
 home:
-  heading: "Your awesome heading"
-  subheading: "Your awesome subheading"
-  banner: "Your image url"
+  heading: "Hello, world!"
+  subheading: "오늘 내가 배운 것을 기록하고 공유합니다."
+  banner: "assets/images/home.gif"
