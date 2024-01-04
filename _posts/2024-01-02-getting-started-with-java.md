@@ -8,6 +8,11 @@ categories:
 tags: 
     - Java
     - Java의 정석
+    - 자바의 역사
+    - 자바언어의 특징
+    - JVM
+    - JDK
+    - 주석
 ---
 ![banner](/assets/images/excerpt-images/2024-01-02-getting-started-with-java.png)
 
