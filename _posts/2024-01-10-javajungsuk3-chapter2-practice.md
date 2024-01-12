@@ -120,7 +120,7 @@ c. short s = (short)ch;<br/>
 
 **2-11.** 다음 중 변수를 잘못 초기화한 것은? (모두 고르시오.)<br/>
 **a. byte b = 256;** // byte의 범위를 넘어선다.<br/>
-**b. char c = ' ';** // char는 빈 문자를 허용하지 않는다.<br/>
+**b. char c = '';** // char는 아무런 문자를 넣지 않는 빈 문자를 허용하지 않는다.(공백문자와 혼동하지 않기)<br/>
 **c. char answer = 'no';** // char는 단 하나의 문자만을 저장할 수 있다.<br/>
 **d. float f = 3.14;** // float는 접미사 f를 붙여줘야 한다. (double은 기본형이므로 접미사 d 생략 가능)<br/>
 e. double d = 1.4e3f; // double형이 float형보다 크기가 크므로 가능하다.<br/>
@@ -149,5 +149,6 @@ d. int - 0<br/>
 - System은 예약어가 아니라 표준 입출력 클래스이다.
 - [참조형 변수는 메모리 주소를 값으로 가지므로 모두 4byte의 크기를 가진다. 또한 참조형 타입의 기본값은 모두 null이다.](https://chaeichi.github.io/java/2024/01/04/variable-1.html#h-%EC%B0%B8%EC%A1%B0%ED%98%95-%EB%B3%80%EC%88%98reference-type)
 - [char형은 부호를 표현하지 않기 때문에 byte형과 short형을 char형으로 변환하게 될 경우 값 손실이 발생할 수 있기 때문에 자동 형변환이 수행되지 않는다.](https://chaeichi.github.io/java/2024/01/08/variable-5.html#h-%EC%9E%90%EB%8F%99-%ED%98%95%EB%B3%80%ED%99%98%EC%9D%98-%EA%B7%9C%EC%B9%99)
+- [char형은 안에 아무런 문자를 넣지 않는 빈 문자를 허용하지 않는다. (공백문자와 빈 문자는 다르다.)](https://chaeichi.github.io/java/2024/01/04/variable-1.html#h-%EB%AC%B8%EC%9E%90-%EB%A6%AC%ED%84%B0%EB%9F%B4%EA%B3%BC-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%A6%AC%ED%84%B0%EB%9F%B4)
 - [main 메서드의 선언부에서 배열을 의미하는 기호인 '[]'는 타입 뒤에 붙여도 되고 변수명 뒤에 붙여도 된다. 매개변수 args에 이름은 달라도 된다.](https://chaeichi.github.io/java/2024/01/02/getting-started-with-java.html#h-main-%EB%A9%94%EC%84%9C%EB%93%9C)
 - char형의 기본값은 '\n0000'이다.
