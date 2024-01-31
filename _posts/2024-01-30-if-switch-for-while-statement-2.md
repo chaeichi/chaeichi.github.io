@@ -375,7 +375,7 @@ class FlowEx20 {
 
 #### for문 안에 if문을 넣어 조건에 맞는 쌍만 출력
 
-```
+```FlowEx21.java
 class FlowEx21 {
     public static void main(String[] args) {
         for(int i=1; i<=5; i++) {
@@ -392,7 +392,7 @@ class FlowEx21 {
 }
 ```
 
-```
+```실행결과
 [1, 1]                    
      [2, 2]               
           [3, 3]          
@@ -686,7 +686,7 @@ do {
 - **do-while문은 최소한 한번은 수행될 것을 보장**
 - **끝에 ';'을 잊지 않도록 주의**
 
-```
+```FlowEx28.java
 import java.util.Scanner;
 
 class FlowEx28 {
@@ -877,7 +877,7 @@ class FlowEx32 {
 ### 이름 붙은 반복문
 - **중첩 반복문 앞에 이름을 붙이고 break문과 continue문에 이름을 지정해 줌으로써 하나 이상의 반복문을 벗어나거나 건너뛸 수 있음**
 
-```
+```FlowEx33.java
 class FlowEx33 {
     public static void main(String[] args) {
         Loop1 : for(int i=2; i<=9; i++) {
@@ -1034,7 +1034,7 @@ class FlowEx34 {
 }
 ```
 
-```
+```실행결과
 (1) square
 (2) square root
 (3) log
