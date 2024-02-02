@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Chapter04. 조건문과 반복문 (2) - 반복문 for, while, do-while"
+title: "Java의 정석 Chapter04. 조건문과 반복문 (2) - 반복문 for, while, do-while"
 subtitle: Java의 정석 3rd Edition | 남궁성
 excerpt_image: /assets/images/excerpt-images/2024-01-30-if-switch-for-while-statement-2.png
 categories: 

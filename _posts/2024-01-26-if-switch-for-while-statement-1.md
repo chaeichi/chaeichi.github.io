@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Chapter04. 조건문과 반복문 (1) - 조건문 if, switch"
+title: "Java의 정석 Chapter04. 조건문과 반복문 (1) - 조건문 if, switch"
 subtitle: Java의 정석 3rd Edition | 남궁성
 excerpt_image: /assets/images/excerpt-images/2024-01-26-if-switch-for-while-statement-1.png
 categories: 

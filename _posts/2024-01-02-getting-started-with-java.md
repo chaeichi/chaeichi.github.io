@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Chapter01. 자바를 시작하기 전에"
+title: "Java의 정석 Chapter01. 자바를 시작하기 전에"
 subtitle: Java의 정석 3rd Edition | 남궁성
 excerpt_image: /assets/images/excerpt-images/2024-01-02-getting-started-with-java.png
 categories: 
