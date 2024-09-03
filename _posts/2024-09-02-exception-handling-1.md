@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Java의 정석 Chapter08. 예외처리 (1)"
+title: "Java의 정석 Chapter08. 예외처리 (1) - try-catch문"
 subtitle: Java의 정석 3rd Edition | 남궁성
 excerpt_image: /assets/images/excerpt-images/2024-09-02-exception-handling-1.png
 categories: 
