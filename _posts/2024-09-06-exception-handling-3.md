@@ -506,3 +506,69 @@ Caused by: SpaceException: 설치할 공간이 부족합니다.
 ```
 
 - `원인 예외`로 등록한 SpaceException이 `Caused by`라는 머리말과 함께 출력되었다.
+
+## 🚩 잊지않기
+- 자동 자원 반환 - try-with-resources문
+    - 주로 입출력에 사용되는 클래스 중에서는 **사용한 후에 꼭 닫아줘야 하는 것들이 있다.** 그래서 사용했던 자원(resources)이 반환되기 때문이다.
+    - try-with-resources문의 `괄호()` 안에 객체를 생성하는 문장을 넣으면, **이 객체는 close()를 호출하지 않아도 try블럭을 벗어나는 순간 자동적으로 close()가 호출된다.**
+    - *try블럭의 괄호() 안에 변수를 선언하는 것도 가능하며, 선언된 변수는 try블럭 내에서만 사용할 수 있다.*
+
+    ```try-with-resources
+    // 괄호() 안에 두 문장 이상 넣을 경우 ';'로 구분한다.
+    try (FileInputStream fis = new FileInputStream("score.dat");
+        DataInputStream dis = new DataInputStream(fis)) {
+        ...
+    }
+    ```
+
+    - 이처럼 try-with-resources문에 의해 자동으로 객체의 close()가 호출될 수 있으려면, 클래스가 `AutoCloseable`이라는 인터페이스를 구현한 것이어야만 한다.
+
+    ```AutoCloseable
+    public interface AutoCloseable {
+        void close() throws Exception
+    }
+    ```
+
+- 억제된 예외
+    - 두 예외는 동시에 발생할 수 없다.
+    - `억제된(Suppressed)`이라는 의미와 머리말과 함께 출력된다.
+    - 두 예외가 동시에 발생할 수 없기 때문에, 두 번째로 발생한 예외는 억제된 예외로 다룬다.
+    - 억제된 예외에 대한 정보는 실제로 발생한 예외에 저장된다.
+    - `Throwable`에는 억제된 예외와 관련된 다음과 같은 메서드가 정의되어 있다.
+        - void addSuppressed(Throwable exception) // 억제된 예외를 추가
+        - Throwable[] getSuppressed() // 억제된 예외(배열)를 반환
+    - 만일 try-with-resources문이 아닌 try-catch문을 사용했다면, 먼저 발생한 예외는 무시되고 마지막으로 발생한 예외에 대한 내용만 출력되었을 것이다.
+
+- 사용자 정의 예외 만들기
+    - 기존의 정의된 예외 클래스 외에 필요에 따라 프로그래머가 새로운 예외 클래스를 정의하여 사용할 수 있다.
+    - 보통 `Exception클래스` 또는 `RuntimeException클래스`로부터 상속받아 클래스를 만들지만, 필요에 따라서 알맞은 예외 클래스를 선택할 수 있다.
+
+    ```custom-exception
+    class MyException extends Exception {
+    MyException(String msg) { // 문자열을 매개변수로 받는 생성자
+        super(msg); // 조상인 Exception클래스의 생성자를 호출한다.
+    }
+    }
+    ```
+    - Exception클래스는 생성 시에 String 값을 받아서 메시지로 저장할 수 있다.
+    - 필요하다면, 멤버변수나 메서드를 추가할 수 있다.
+
+- 예외 되던지기(exception re-throwing)
+    - 한 메서드에서 발생할 수 있는 예외가 여럿일 경우, 몇 개는 try-catch문을 통해서 메서드 내에서 자체적으로 처리하고, 그 나머지는 선언부에 지정하여 호출한 메서드에서 처리하도록 함으로써, **양쪽으로 나눠서 처리되도록 할 수 있다.**
+    - 그리고 심지어는 **단 하나의 예외에 대해서도 예외가 발생한 메서드와 호출한 메서드, 양쪽에서 처리하도록 할 수 있다.**
+    - 예외를 처리한 후에 **인위적으로 다시 발생시키는 방법**을 통해서 가능한데, 이것을 `예외 되던지기(exception re-throwing)`라고 한다.
+    - 먼저 예외가 발생할 가능성이 있는 메서드에서 `try-catch문`을 사용해서 예외를 처리해주고 catch문에서 필요한 작업을 행한 후에 `throw문`을 사용해서 예외를 다시 발생시킨다.
+    - 다시 발생한 예외는 이 메서드를 `호출한 메서드`에게 전달되고 호출한 메서드의 `try-catch문`에서 예외를 또 다시 처리한다.
+    - **이 때 주의할 점은 예외가 발생한 메서드에서는 try-catch문을 사용해서 예외처리를 해줌과 동시에 메서드의 선언부에 발생한 예외를 throws에 지정해줘야 한다는 것이다.**
+    - **반환값이 있는 return문의 경우, catch블럭에도 return문이 있어야 한다. 예외가 발생했을 경우에도 값을 반환해야하기 때문이다.**
+    - 또는 **catch블럭에서 예외 되던지기를 해서 호출한 메서드로 예외를 전달하면, return문이 없어도 된다.** 그래서 검증에서도 assert문 대신 AssertError를 생성해서 던진다.
+    - finally블럭 내에서도 return문을 사용할 수 있으며, try블럭이나 catch블럭의 return문 다음에 수행된다. **최종적으로 finally블럭 내의 return문이 반환된다.**
+- 연결된 예외(chained exception)
+    - 한 에러가 다른 예외를 발생시킬 수도 있다. 예를 들어 예외 A가 예외 B를 발생시켰다면, A를 B의 `원인 예외(cause exception)`라고 한다.
+    - B를 생성한 후, `initCause()`로 A를 B의 `원인 에외`로 등록한다. 그리고 `throw`로 이 예외를 던진다.
+    - `initCause()`는 Exception클래스의 조상인 `Throwable클래스`에 정의되어 있기 때문에 모든 예외에서 사용가능하다.
+        - Throwable initCause(Throwable cause) // 지정한 예외를 원인 예외로 등록
+        - Throwable getCause() // 원인 예외를 반환
+    - 여러 가지 예외를 `하나의 큰 분류의 예외`로 묶어서 다루기 위해 원인 예외로 등록해서 다시 예외를 발생시킨다.
+    - 이를 이용하면 checked예외를 unchecked예외로 바꿀 수 있다.
+    - 원인 예외로 등록한 Exception은 `Caused by`라는 머리말과 함께 출력된다.

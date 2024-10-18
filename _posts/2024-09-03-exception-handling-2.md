@@ -58,7 +58,7 @@ class ExceptionEx10 {
 }
 ```
 
-```컴파일 결과
+```컴파일_결과
 unreported exception java.lang.Exception; must be caught or declared to be thrown
 ```
 
@@ -216,7 +216,7 @@ class ExceptionEx14 {
         try {
             method1();
         } catch (Exception e) {
-            System.out.println("main메서드에서 에외가 처리되었습니다.");
+            System.out.println("main메서드에서 예외가 처리되었습니다.");
             e.printStackTrace();
         }
     }
@@ -228,7 +228,7 @@ class ExceptionEx14 {
 ```
 
 ```실행결과
-main메서드에서 에외가 처리되었습니다.
+main메서드에서 예외가 처리되었습니다.
 java.lang.Exception
 	at ExceptionEx14.method1(ExceptionEx14.java:12)
 	at ExceptionEx14.main(ExceptionEx14.java:4)
@@ -431,3 +431,35 @@ method1()의 수행을 마치고 main메서드로 돌아왔습니다.
 
 - try블럭에서 `return문`이 실행되는 경우에도 `finally블럭`의 문장들이 먼저 실행된 후에, 현재 실행 중인 메서드를 종료한다.
 - 이와 마찬가지로 catch블럭의 문장 수행 중에 return문을 만나도 `finally블럭`의 문장들은 수행된다.
+
+## 🚩 잊지않기
+- 예외 발생시키기
+    - 키워드 `throw`를 사용해서 프로그래머가 고의로 예외를 발생시킬 수 있다.
+    - 먼저, 연산자 new를 이용해서 발생시키려는 예외 클래스의 객체를 만든다.
+        - `Exception e = new Exception("고의로 발생시켰음");`
+    - 키워드 throw를 이용해서 예외를 발생시킨다.
+        - `throw e;`
+    - `throw new Exception("고의로 발생시켰음.");` // 위의 두 줄을 한 줄로 줄여 쓸 수 있다.
+- 컴파일러가 예외처리를 확인하지 않는 `RuntimeException클래스`들은 `unchecked예외`라고 부른다.
+- 컴파일러가 예외처리를 확인하는 `Exception클래스들`은 `checked예외`라고 부른다.
+- 메서드에 예외 선언하기
+    - 메서드의 선언부에 키워드 `throws`를 사용해서 메서드 내에서 발생할 수 있는 예외를 적어준다.
+    - **메서드에 예외를 선언할 때 일반적으로 RuntimeException클래스들은 적지 않는다.**
+    - 반드시 처리해주어야 하는 예외들만 선언한다.
+    - 예외를 메서드의 throws에 명시하는 것은 **자신(예외가 발생할 가능성이 있는 메서드)을 호출한 메서드에게 예외를 전달하여 예외처리를 떠맡기는 것이다.**
+    - `throws`를 명시하여 자신을 호출한 메서드에게 예외를 넘겨줄 수는 있지만, 이것으로 예외가 처리가 된 것은 아니고 예외를 단순히 전달만 하는 것이다.
+    - 예외가 발생한 메서드 내에서 자체적으로 처리해도 되는 것은 메서드 내에서 try-catch문을 사용해서 처리한다.
+    - 메서드에 호출 시 넘겨받아야 할 값을 다시 받아야 하는 경우(메서드 내에서 자체적으로 해결이 안되는 경우)에는 예외를 메서드에 선언해서, 호출한 메서드에서 처리해야한다.
+    
+```throws
+void method() throws Exception1, Exception2, ..., ExceptionN {
+    // 메서드의 내용
+}
+```
+
+- finally블럭
+    - 예외의 발생여부에 상관없이 실행되어야할 코드를 포함시킬 목적으로 사용된다.
+    - try-catch문의 끝에 선택적으로 덧붙여 사용할 수 있으며, **try-catch-finally**의 순서로 구성된다.
+        - 예외가 발생한 경우에는 **try → catch → finally**의 순으로 실행된다.
+        - 예외가 발생하지 않은 경우에는 **try → finally**의 순으로 실행된다.
+    - try블럭과 catch블럭의 문장 수행 중 `return문`이 실행되는 경우에도 `finally블럭`의 문장들이 먼저 실행된 후에, 현재 실행 중인 메서드를 종료한다.
