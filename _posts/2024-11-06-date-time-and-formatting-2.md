@@ -8,6 +8,11 @@ categories:
 tags: 
     - Java
     - Java의 정석
+    - 형식화 클래스
+    - DecimalFormat
+    - SimpleDateFormat
+    - ChoiceFormat
+    - MessageFormat
 ---
 ![banner](/assets/images/excerpt-images/2024-11-06-date-time-and-formatting-2.png)
 
