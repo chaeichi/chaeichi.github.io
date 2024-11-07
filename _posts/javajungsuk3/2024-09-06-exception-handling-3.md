@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 Chapter08. 예외처리 (3) - 자동 자원 반환 / 사용자 정의 예외 / 예외 되던지기 / 연결된 예외"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-09-06-exception-handling-3.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-09-06-exception-handling-3.png
 categories: 
     - Java
 tags: 
@@ -18,7 +18,7 @@ tags:
     - chained exception
     - Caused by
 ---
-![banner](/assets/images/excerpt-images/2024-09-06-exception-handling-3.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-09-06-exception-handling-3.png)
 
 ## 자동 자원 반환 - try-with-resources문
 - JDK1.7부터 `try-with-resources문`이라는 `try-catch문`의 변형이 새로 추가되었다.

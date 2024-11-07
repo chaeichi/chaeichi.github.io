@@ -1,8 +1,8 @@
----
+s---
 layout: post
 title: "Java의 정석 연습문제 - Chapter06. 객체지향 프로그래밍 I"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-08-02-javajungsuk3-chapter6-practice.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-08-02-javajungsuk3-chapter6-practice.png
 categories: 
     - 문제풀이
 tags: 
@@ -14,7 +14,7 @@ tags:
     - Math.sqrt()
     - Math.pow()
 ---
-![banner](/assets/images/excerpt-images/2024-08-02-javajungsuk3-chapter6-practice.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-08-02-javajungsuk3-chapter6-practice.png)
 
 **[6-1]** 다음과 같은 멤버변수를 갖는 `SutdaCard클래스`를 정의하시오.<br/>
 

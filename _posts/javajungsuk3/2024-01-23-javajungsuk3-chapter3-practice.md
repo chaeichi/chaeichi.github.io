@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 연습문제 - Chapter03. 연산자"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-01-23-javajungsuk3-chapter3-practice.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-01-23-javajungsuk3-chapter3-practice.png
 categories: 
     - 문제풀이
 tags: 
@@ -11,7 +11,7 @@ tags:
     - 연습문제
     - 문제풀이
 ---
-![banner](/assets/images/excerpt-images/2024-01-23-javajungsuk3-chapter3-practice.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-01-23-javajungsuk3-chapter3-practice.png)
 
 ## ✏️ 연습문제
 **3-1.** 다음 연산의 결과를 적으시오.

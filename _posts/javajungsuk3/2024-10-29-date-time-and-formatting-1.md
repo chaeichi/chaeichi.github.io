@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 Chapter10. 날짜와 시간 & 형식화 (1) - 날짜와 시간"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-10-29-date-time-and-formatting-1.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-10-29-date-time-and-formatting-1.png
 categories: 
     - Java
 tags: 
@@ -11,7 +11,7 @@ tags:
     - Calendar클래스
     - Date클래스
 ---
-![banner](/assets/images/excerpt-images/2024-10-29-date-time-and-formatting-1.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-10-29-date-time-and-formatting-1.png)
 
 ## 날짜와 시간
 ### Calendar와 Date

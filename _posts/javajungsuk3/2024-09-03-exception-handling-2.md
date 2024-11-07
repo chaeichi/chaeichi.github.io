@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 Chapter08. 예외처리 (2) - throw, throws, finally"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-09-03-exception-handling-2.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-09-03-exception-handling-2.png
 categories: 
     - Java
 tags: 
@@ -15,7 +15,7 @@ tags:
     - throws
     - finally
 ---
-![banner](/assets/images/excerpt-images/2024-09-03-exception-handling-2.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-09-03-exception-handling-2.png)
 
 ## 예외 발생시키기
 - 키워드 `throw`를 사용해서 **프로그래머가 고의로 예외를 발생시킬 수 있다.**

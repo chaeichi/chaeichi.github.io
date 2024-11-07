@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 연습문제 - Chapter07. 객체지향 프로그래밍 II"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-08-30-javajungsuk3-chapter7-practice.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-08-30-javajungsuk3-chapter7-practice.png
 categories: 
     - 문제풀이
 tags: 
@@ -11,7 +11,7 @@ tags:
     - 연습문제
     - 문제풀이
 ---
-![banner](/assets/images/excerpt-images/2024-08-30-javajungsuk3-chapter7-practice.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-08-30-javajungsuk3-chapter7-practice.png)
 
 **[7-1]** 섯다카드 20장을 포함하는 `섯다카드 한 벌(SutdaDeck 클래스)`을 정의한 것이다. 섯다카드 20장을 담는 `SutdaCard배열`을 초기화하시오. **단, 섯다카드는 1부터 10까지의 숫자가 적힌 카드가 한 장씩 있고, 숫자가 1, 3, 8인 경우에는 둘 중의 한 장은 광(kwang)이어야 한다.** 즉, SutdaCard의 인스턴스변수 isKwang의 값이 true이어야 한다.
 

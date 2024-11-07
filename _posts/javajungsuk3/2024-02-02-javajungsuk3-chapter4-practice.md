@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 연습문제 - Chapter04. 조건문과 반복문"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-02-02-javajungsuk3-chapter4-practice.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-02-02-javajungsuk3-chapter4-practice.png
 categories: 
     - 문제풀이
 tags: 
@@ -12,7 +12,7 @@ tags:
     - 문제풀이
     - 피보나치 수열
 ---
-![banner](/assets/images/excerpt-images/2024-02-02-javajungsuk3-chapter4-practice.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-02-02-javajungsuk3-chapter4-practice.png)
 
 ## ✏️ 연습문제
 

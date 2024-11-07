@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 연습문제 - Chapter09. java.lang패키지와 유용한 클래스"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-10-10-javajungsuk3-chapter9-practice.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-10-10-javajungsuk3-chapter9-practice.png
 categories: 
     - 문제풀이
 tags: 
@@ -11,7 +11,7 @@ tags:
     - 연습문제
     - 문제풀이
 ---
-![banner](/assets/images/excerpt-images/2024-10-10-javajungsuk3-chapter9-practice.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-10-10-javajungsuk3-chapter9-practice.png)
 
 **[9-1]** 다음과 같은 실행결과를 얻도록 SutdaCard클래스의 `equals()`를 멤버변수인 num, isKwang의 값을 비교하도록 `오버라이딩`하고 테스트 하시오.
 

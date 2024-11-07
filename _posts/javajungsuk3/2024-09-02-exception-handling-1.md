@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 Chapter08. 예외처리 (1) - try-catch문"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-09-02-exception-handling-1.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-09-02-exception-handling-1.png
 categories: 
     - Java
 tags: 
@@ -23,7 +23,7 @@ tags:
     - System.err
     - 멀티 catch블럭
 ---
-![banner](/assets/images/excerpt-images/2024-09-02-exception-handling-1.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-09-02-exception-handling-1.png)
 
 ## 예외처리(exception-handling)
 ### 프로그램 오류

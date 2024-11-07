@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 Chapter01. 자바를 시작하기 전에"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-01-02-getting-started-with-java.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-01-02-getting-started-with-java.png
 categories: 
     - Java
 tags: 
@@ -14,7 +14,7 @@ tags:
     - JDK
     - 주석
 ---
-![banner](/assets/images/excerpt-images/2024-01-02-getting-started-with-java.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-01-02-getting-started-with-java.png)
 
 ## 자바(Java)
 ### 자바란?

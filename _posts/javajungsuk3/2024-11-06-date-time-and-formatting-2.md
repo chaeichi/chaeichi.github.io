@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 Chapter10. 날짜와 시간 & 형식화 (2) - 형식화 클래스"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-11-06-date-time-and-formatting-2.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-11-06-date-time-and-formatting-2.png
 categories: 
     - Java
 tags: 
@@ -14,7 +14,7 @@ tags:
     - ChoiceFormat
     - MessageFormat
 ---
-![banner](/assets/images/excerpt-images/2024-11-06-date-time-and-formatting-2.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-11-06-date-time-and-formatting-2.png)
 
 ## 형식화 클래스
 - `java.text패키지`에 포함

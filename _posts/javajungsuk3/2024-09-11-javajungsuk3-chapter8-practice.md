@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 연습문제 - Chapter08. 예외처리"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-09-11-javajungsuk3-chapter8-practice.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-09-11-javajungsuk3-chapter8-practice.png
 categories: 
     - 문제풀이
 tags: 
@@ -11,7 +11,7 @@ tags:
     - 연습문제
     - 문제풀이
 ---
-![banner](/assets/images/excerpt-images/2024-09-11-javajungsuk3-chapter8-practice.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-09-11-javajungsuk3-chapter8-practice.png)
 
 **[8-1]** `예외처리의 정의`와 `목적`에 대해서 설명하시오.<br/>
 **[정답]** 정의 : 프로그램 실행 시 발생할 수 있는 예외의 발생에 대비한 프로그램 코드를 작성하는 것<br/>

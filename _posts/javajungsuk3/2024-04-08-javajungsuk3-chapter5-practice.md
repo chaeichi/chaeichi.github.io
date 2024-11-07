@@ -2,7 +2,7 @@
 layout: post
 title: "Java의 정석 연습문제 - Chapter05. 배열"
 subtitle: Java의 정석 3rd Edition | 남궁성
-excerpt_image: /assets/images/excerpt-images/2024-04-08-javajungsuk3-chapter5-practice.png
+excerpt_image: /assets/images/excerpt-images/javajungsuk3/2024-04-08-javajungsuk3-chapter5-practice.png
 categories: 
     - 문제풀이
 tags: 
@@ -12,7 +12,7 @@ tags:
     - 문제풀이
     - 2차원 배열 90도 회전
 ---
-![banner](/assets/images/excerpt-images/2024-04-08-javajungsuk3-chapter5-practice.png)
+![banner](/assets/images/excerpt-images/javajungsuk3/2024-04-08-javajungsuk3-chapter5-practice.png)
 
 **[5-1]** 다음은 `배열을 선언하거나 초기화한 것`이다.잘못된 것을 고르고 그 이유를 설명하시오.<br/>
 a. int[] arr[];<br/>
