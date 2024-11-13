@@ -1,4 +1,4 @@
-s---
+---
 layout: post
 title: "Java의 정석 연습문제 - Chapter06. 객체지향 프로그래밍 I"
 subtitle: Java의 정석 3rd Edition | 남궁성
