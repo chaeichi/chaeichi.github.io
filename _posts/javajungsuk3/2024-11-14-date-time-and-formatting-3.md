@@ -378,3 +378,32 @@ int nano = now.getNano();
 - Instant는 기존의 java.util.Date를 대체하기 위한 것이며, JDK1.8부터 Date에 Instant로 변환할 수 있는 새로운 메서드가 추가되었다.
     - static Date from(Instant instant) // Instant → Date
     - Instant toInstant() // Date → Instant
+
+## 🚩 잊지않기
+- java.time패키지
+    - 패키지들에 속한 클래스들의 가장 큰 특징은 `불변(immutable)`
+    - 날짜나 시간을 변경하는 메서드들은 기존의 객체를 변경하는 대신 항상 변경된 새로운 객체를 반환한다.
+- java.time패키지의 클래스
+    - 날짜를 표현할 때 사용하는 `LocalDate`
+    - 시간을 표현할 때 사용하는 `LocalTime`
+    - 날짜와 시간이 모두 필요할 때 사용하는 `LocalDateTime`
+    - 시간대(time-zone)까지 다뤄야 한다면, `ZonedDateTime`
+    - 두 날짜간의 차이를 표현하기 위한 `Period`
+    - 시간의 차이를 표현하기 위한 `Duration`
+- java.time패키지에 속한 클래스의 객체를 생성하는 가장 기본적인 방법
+    - `now()`는 현재 날짜와 시간을 저장하는 객체를 생성한다.
+    - `of()`는 해당 필드의 값을 순서대로 지정해 주기만 하면 된다.
+- Temporal과 TemporalAmount
+    - Temporal, TemporalAccessor, TemporalAdjuster인터페이스를 구현한 클래스
+        - LocalDate, LocalTime, LocalDateTime, ZonedDateTime, Instant 등 날짜와 시간을 표현하기 위한 클래스들
+    - TemporalAmount인터페이스를 구현한 클래스
+        - Period, Duration
+- 특정 필드의 값 가져오기 - get() 또는 get으로 시작하는 메서드
+- 필드의 값 변경하기 - with로 시작하는 메서드 또는 with(), plus(), minus()
+- **필드를 변경하는 메서드들은 항상 새로운 객체를 생성해서 반환하므로 대입 연산자를 사용해야 한다.**
+- 날짜와 시간의 비교 - isAfter(), isBefore(), isEqual()
+    - equals()가 있는데도 isEqual()을 제공하는 이유는 **연표(chronology)가 다른 두 날짜를 비교하기 위해서**이다.
+    - 모든 필드가 일치해야하는 equals()와 달리 isEqual()은 오직 날짜만 비교한다.
+- `Instant`
+    - 에포크 타임(EPOCH TIME, 1970-01-01 00:00:00 UTC)부터 경과된 시간을 나노초로 표현한다.
+    - 시간을 초 단위와 나노초 단위로 나누어 저장한다.
