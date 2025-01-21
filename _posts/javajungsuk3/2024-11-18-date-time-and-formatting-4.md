@@ -338,7 +338,7 @@ long dday = today.until(myBirthDay, ChronoUnit.DAYS);
 ```of
 Period pe = Period.of(1, 12, 31); // 1년 12개월 31일
 Duration du = Duration.of(60, ChronoUnit.SECONDS); // 60초
-// Duration du - Duration.ofSeconds(60); // 위의 문장과 동일
+// Duration du = Duration.ofSeconds(60); // 위의 문장과 동일
 ```
 - 특정 필드의 값을 변경하는 `with()`도 있다.
 
@@ -364,7 +364,7 @@ boolean sameDate = Period.between(date1, date2).isZero();
 boolean isBefore = Duration.between(time1, time2).isNegative();
 ```
 
-- 부호를 반대로 변경하는 `negate()`와 부호를 없애는 `abs()`가 있다.
+- 부호를 반대로 변경하는 `negated()`와 부호를 없애는 `abs()`가 있다.
 - `Period`에는 abs()가 없어서 `isNegative`로 음수인지 확인한 후 `negated()`를 이용해야 한다.
     - if(pe.isNegative()) pe = pe.negated();
 
@@ -637,3 +637,65 @@ class DateFormatterEx2 {
 2001-01-01T23:59:59
 2015-12-31T23:59:59
 ```
+
+## 🚩 잊지않기
+- `LocalDateTime`과 `ZonedDateTime`
+    - LocalDate + LocalTime = LocalDateTime
+    - LocalDateTime + 시간대(time zone) = ZonedDateTime
+- LocalDateTime으로 ZonedDateTime 만들기
+    - 기존에는 TimeZone클래스로 시간대를 다뤘지만 새로운 시간 패키지에서는 `ZoneId`라는 클래스를 사용한다.
+    - LocalDateTime에 `atZone()`으로 시간대 정보를 추가하면, ZonedDateTime을 얻을 수 있다.
+    - 사용가능한 ZoneId의 목록은 `ZoneId.getAvailableZoneIds()`로 얻을 수 있다.
+- `OffsetDateTime`
+    - ZoneId가 아닌 `ZoneOffset`을 사용하는 것
+    - ZoneId는 `일광 절약 시간`처럼 시간대와 관련된 규칙들을 포함
+    - ZoneOffset은 시간대를 `시간의 차이`로만 구분
+    - 서로 다른 시간대에 존재하는 컴퓨터간의 통신에는 `OffsetDateTime`이 필요하다.
+    - LocalDate와 LocalTime에 `ZoneOffset`을 더하거나, ZonedDateTime에 `toOffsetDateTime()`을 호출해서 얻을 수 있다.
+- `TemporalAdjusters`
+    - 자주 쓰일만한 날짜 계산들을 대신 해주는 메서드를 정의해놓은 것
+- `Period`와 `Duration`
+    - 날짜의 차이를 계산하기 위한 Period
+    - 시간의 차이를 계산하기 위한 Duration
+    - 차이를 구할 때는 `between()`을 사용한다.
+    - 특정 필드의 값을 얻을 때는 `get()`을 사용한다.
+    - Duration에는 getHours(), getMinutes() 같은 메서드가 없다.
+    - `getUnits()`라는 메서드로 get()에 사용할 수 있는 ChronoUnit의 종류를 확인할 수 있다.
+
+    ```getUnits
+    System.out.println(pe.getUnits()); [Years, Months, Days]
+    System.out.println(du.getUnits()); [Seconds, Nanos]
+    ```
+
+    - Duration을 LocalTime으로 변환한 다음에, LocalTime이 가지고 있는 get메서드들을 사용하면 간단하게 계산할 수 있다.
+
+    - `between()`과 `until()`
+        - between()은 `static메서드`
+        - until()은 `인스턴스메서드`
+    - `of()`
+        - Period에는 of(), ofYears(), ofMonths(), ofWeeks(), ofDays()가 있다.
+        - Duration에는 of(), ofDays(), ofHours(), ofMinutes(), ofSeconds() 등이 있다.
+    - 특정 필드의 값을 변경하는 `with()`
+        - Period에는 withMonths(), withDays()
+        - Duration에는 withNanos()
+    - 사칙연산, 비교연산, 기타 메서드
+        - `plus()`, `minus()` 외에 곱셈과 나눗셈을 위한 메서드도 있다.
+        - Period는 날짜의 기간을 표현하기 위한 것이므로 나눗셈을 위한 메서드가 없다.
+        - 음수인지 확인하는 `isNegative()`, 0인지 확인하는 `isZero()`
+        - 부호를 반대로 변경하는 `negated()`, 부호를 없애는 `abs()`
+        - Period에는 abs()가 없어서 isNegative로 음수인지 확인한 후 negated()를 이용해야 한다.
+        - Period에 `normalized()`라는 메서드가 있는데, 이 메서드는 월(month)의 값이 12를 넘기지 않게, 즉 1년 13개월을 2년 1개월로 바꿔준다. 일(day)의 길이는 일정하지 않으므로 그대로 놔눈다.
+    - 다른 단위로 변환
+        - 이름이 `to`로 시작하는 메서드들은 Period와 Duration을 다른 단위의 값으로 변환하는데 사용된다.
+        - toTotalMonths(), toDays(), toHours(), toMinutes()
+        - LocalTime에도 `toSecondOfDay()`와 `toNanoOfDay()` 메서드가 있어서, Duration을 사용하지 않고도 뺄셈으로 시간차이를 계산할 수 있다.
+- 파싱과 포맷
+    - `형식화(formatting)`와 관련된 클래스들은 `java.time.format`패키지에 들어있다.
+    - 이 중에서 `DateTimeFormatter`가 핵심이다.
+    - DateTimeFormatter의 `ofPattern()`으로 원하는 출력형식을 직접 작성할 수도 있다.
+    - 문자열을 날짜 또는 시간으로 변환하려면 static메서드 `parse()`를 사용하면 된다.
+
+    ```parse
+    static LocalDateTime parse(CharSequence text)
+    static LocalDateTime parse(CharSequence text, DateTimeFormatter formatter)
+    ```
